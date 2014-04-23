@@ -3,7 +3,9 @@
 # Production Imports
 from mark import markDeploymentWrap
 # Imports for testing only
+import json
 import random
+# import inspect
 
 
 @markDeploymentWrap("https://rpm.newrelic.com/deployments.xml", "<YOUR API KEY>", "<YOUR APP ID>", "<LOG STRING>", "<DEPLOY MESSAGE>", "<REVISION>", "<USERNAME>")
@@ -17,4 +19,5 @@ def testMarkDeployment(somearg):
 
 if __name__ == "__main__":
     resp = testMarkDeployment('Python Rules')
-    print(resp)
+    # print(inspect.getmembers(resp['markresp'], predicate=inspect.ismethod))
+    print(json.dumps(resp))
