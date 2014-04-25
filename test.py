@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 # Production Imports
+import sys
+sys.path.append('/usr/lib/yum-plugins')
 from mark import markDeploymentWrap
 # Imports for testing only
 import json
